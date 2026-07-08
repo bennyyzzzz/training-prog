@@ -23,14 +23,14 @@ function fncIMC() {
 
 fncIMC()
 
-let aw = prompt("Want to calculate again? (Yes or No)");
-aw = aw.toLowerCase();
+let aw = prompt("Want to calculate again? (Yes or No)")
+aw = aw.toLowerCase()
 
 while (aw === "yes" || aw === "y") {
-    fncIMC();
+    fncIMC()
 
-    aw = prompt("Want to calculate again? (Yes or No)");
-    aw = aw.toLowerCase();
+    aw = prompt("Want to calculate again? (Yes or No)")
+    aw = aw.toLowerCase()
 }
 
-console.log("Thank you!");
+console.log("Thank you!")
