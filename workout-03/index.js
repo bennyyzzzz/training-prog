@@ -1,22 +1,22 @@
 /* ==========================================================
-   MINI-PROJETO: Gerenciador de Tarefas
+   MINI-PROJECT: Task Manager
    ==========================================================
-   Objetivo: praticar LOOPS e ARRAYS usando o que você já sabe
-   (variáveis, condicionais e funções).
+   Goal: practice LOOPS and ARRAYS using what you already know
+   (variables, conditionals, and functions).
 
-   Como usar:
-   1. Rode este arquivo com Node.js: node gerenciador-tarefas.js
-      (ou cole o código no console do navegador - F12)
-   2. Complete cada função onde está escrito "SEU CÓDIGO AQUI"
-   3. No final do arquivo já tem testes prontos. Rode e confira
-      se o resultado impresso bate com o "resultado esperado"
-      que está no comentário.
+   How to use:
+   1. Run this file with Node.js: node gerenciador-tarefas.js
+      (or paste the code into the browser console - F12)
+   2. Complete each function where it says "YOUR CODE HERE"
+   3. At the end of the file there are ready-made tests. Run them
+      and check whether the printed result matches the "expected
+      result" noted in the comment.
 
-   Dica: não precisa fazer na ordem, mas siga a numeração,
-   os desafios vão ficando mais difíceis.
+   Tip: you don't need to do them in order, but follow the
+   numbering — the challenges get harder as you go.
    ========================================================== */
 
-// Nosso "banco de dados" de tarefas. Cada tarefa é um objeto.
+// Our task "database". Each task is an object.
 
 const tarefas = [
   { nome: "Estudar loops",      concluida: false, prioridade: "alta"  },
@@ -28,9 +28,9 @@ const tarefas = [
 
 
 /* ----------------------------------------------------------
-   DESAFIO 1: Listar todas as tarefas
-   Percorra o array com um for e imprima o nome de cada tarefa
-   no console. Ex: "- Estudar loops"
+   CHALLENGE 1: List all tasks
+   Loop through the array with a for and print the name of each
+   task to the console. Ex: "- Estudar loops"
 ---------------------------------------------------------- */
 function listarTarefas() {
   for(let i of tarefas){
@@ -40,9 +40,9 @@ function listarTarefas() {
 
 
 /* ----------------------------------------------------------
-   DESAFIO 2: Contar tarefas concluídas
-   Use um for + if para contar quantas tarefas têm
-   concluida === true. Retorne o número.
+   CHALLENGE 2: Count completed tasks
+   Use a for + if to count how many tasks have
+   concluida === true. Return the number.
 ---------------------------------------------------------- */
 function contarConcluidas() {
 
@@ -60,11 +60,11 @@ function contarConcluidas() {
 
 
 /* ----------------------------------------------------------
-   DESAFIO 3: Filtrar por prioridade
-   Receba uma lista e uma prioridade (ex: "alta") e retorne
-   um NOVO array só com as tarefas dessa prioridade.
-   Dica: crie um array vazio, percorra a lista original com
-   for, e use .push() para adicionar as que combinam.
+   CHALLENGE 3: Filter by priority
+   Receive a list and a priority (e.g. "alta") and return
+   a NEW array containing only the tasks with that priority.
+   Tip: create an empty array, loop through the original list
+   with a for, and use .push() to add the matching ones.
 ---------------------------------------------------------- */
 function filtrarPorPrioridade(prioridade) {
   const p = []
@@ -78,10 +78,10 @@ function filtrarPorPrioridade(prioridade) {
 }
 
 /* ----------------------------------------------------------
-   DESAFIO 4: Calcular percentual concluído
-   Retorne (como número) a porcentagem de tarefas concluídas.
-   Ex: 2 de 5 concluídas = 40
-   Dica: você pode reaproveitar a função do Desafio 2!
+   CHALLENGE 4: Calculate completion percentage
+   Return (as a number) the percentage of completed tasks.
+   Ex: 2 out of 5 completed = 40
+   Tip: you can reuse the function from Challenge 2!
 ---------------------------------------------------------- */
 function calcularPercentual() {
   let c = 0
@@ -101,10 +101,10 @@ function calcularPercentual() {
 
 
 /* ----------------------------------------------------------
-   DESAFIO 5 (mais difícil): Adicionar uma nova tarefa
-   Crie um objeto novo com nome, concluida (inicia false) e
-   prioridade recebidos como parâmetros, e adicione ao array
-   original usando .push().
+   CHALLENGE 5 (harder): Add a new task
+   Create a new object with nome, concluida (starts false), and
+   prioridade received as parameters, and add it to the original
+   array using .push().
 ---------------------------------------------------------- */
 function adicionarTarefa(nome, prioridade) {
    nome = "Adicionar tarefa"
@@ -121,25 +121,25 @@ function adicionarTarefa(nome, prioridade) {
 
 
 /* ==========================================================
-   TESTES - não precisa mexer aqui, só rodar e conferir
+   TESTS - no need to touch this, just run it and check
    ========================================================== */
-console.log("=== Desafio 1: Listar tarefas ===");
+console.log("=== Challenge 1: List tasks ===");
 listarTarefas(tarefas);
-// Resultado esperado: as 5 tarefas listadas com "- " na frente
+// Expected result: the 5 tasks listed with "- " in front
 
-console.log("\n=== Desafio 2: Contar concluídas ===");
+console.log("\n=== Challenge 2: Count completed ===");
 console.log(contarConcluidas(tarefas));
-// Resultado esperado: 2
+// Expected result: 2
 
-console.log("\n=== Desafio 3: Filtrar por prioridade 'alta' ===");
+console.log("\n=== Challenge 3: Filter by priority 'alta' ===");
 console.log(filtrarPorPrioridade(tarefas, "alta"));
-// Resultado esperado: array com "Estudar loops" e "Estudar arrays"
+// Expected result: array with "Estudar loops" and "Estudar arrays"
 
-console.log("\n=== Desafio 4: Percentual concluído ===");
+console.log("\n=== Challenge 4: Completion percentage ===");
 console.log(calcularPercentual(tarefas) + "%");
-// Resultado esperado: 40%
+// Expected result: 40%
 
-console.log("\n=== Desafio 5: Adicionar tarefa ===");
+console.log("\n=== Challenge 5: Add task ===");
 adicionarTarefa(tarefas, "Praticar JS todo dia", "alta");
 listarTarefas(tarefas);
-// Resultado esperado: agora aparecem 6 tarefas, incluindo a nova
+// Expected result: now 6 tasks appear, including the new one
