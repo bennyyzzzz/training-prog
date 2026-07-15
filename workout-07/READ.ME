@@ -1,0 +1,16 @@
+Debugging + reading someone else's code:
+
+javascript function getActiveUsersReport(users) {
+  const activeUsers = users.filter(u => u.status = 'active');
+  const totalAge = activeUsers.reduce((sum, u) => sum + u.age);
+  const avgAge = totalAge / activeUsers.length;
+  
+  return {
+    count: activeUsers.length,
+    averageAge: avgAge,
+    names: activeUsers.map(u => u.name).join(', ')
+  };
+}
+
+This function should return a report of active users (count, average age, and names), but it has at least 2 bugs.
+Your mission: find the bugs, explain what's wrong (not just fix it — tell me why it's broken), and send me the corrected version.
