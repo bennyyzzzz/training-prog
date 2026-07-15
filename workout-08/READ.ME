@@ -1,0 +1,32 @@
+You have this function that already works, which filters products by category:
+
+javascript
+function filterByCategory(products, category) {
+  return products.filter(p => p.category === category);
+}
+
+And this sample data:
+
+javascript
+const products = [
+  { name: 'Notebook', category: 'electronics', price: 3500, stock: 5 },
+  { name: 'Mouse', category: 'electronics', price: 50, stock: 0 },
+  { name: 'Chair', category: 'furniture', price: 800, stock: 12 },
+  { name: 'Table', category: 'furniture', price: 1200, stock: 0 },
+  { name: 'Headphones', category: 'electronics', price: 200, stock: 3 },
+];
+
+Your mission: create a new function getAvailableProductsSorted(products, category) that:
+
+- Reuses the logic from filterByCategory (don't copy/paste the filter, call the existing function)
+- In addition to filtering by category, removes products that are out of stock (stock === 0)
+- Sorts the result by price, from cheapest to most expensive
+- Returns only the name and price fields of each product (not the full object)
+
+Expected usage example:
+
+javascript 
+getAvailableProductsSorted(products, 'electronics')
+// should return:
+// [ { name: 'Headphones', price: 200 }, { name: 'Notebook', price: 3500 } ]
+// (Mouse is excluded because stock is 0)
